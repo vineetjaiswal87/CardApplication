@@ -12,7 +12,7 @@ import com.vineet.cc.exceptions.ErrorResponse;
 import com.vineet.cc.model.CardDetails;
 
 /**
- * Declared public API interface for Credit Card
+ * Declared public API interface for all types of payment Cards
  *
  */
 public interface CardInterface {

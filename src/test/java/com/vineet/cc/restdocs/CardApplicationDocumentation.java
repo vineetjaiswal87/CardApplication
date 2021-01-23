@@ -31,7 +31,7 @@ import com.vineet.cc.service.CreditCardNumberValidatorImpl;
 import com.vineet.cc.service.CreditCardService;
 
 /**
- * This class is created to generated spring rest document.
+ * This class is created to generate spring rest document.
  *
  */
 @AutoConfigureMockMvc
@@ -85,7 +85,7 @@ public class CardApplicationDocumentation {
 	}
 
 	@Test
-	public void addCardFailureLuhnAlgo() throws Exception {
+	public void addCardFailureLuhnAlgorithm() throws Exception {
 		this.mockMvc.perform(post("/card/v1/add").contentType(MediaType.APPLICATION_JSON).content(
 				"{\"name\": \"Vineet\",\"cardNumber\": \"1111222255554444\",\"limitAmt\": \"100.00\",\"userId\": \"vx\"}"))
 				.andDo(print()).andExpect(status().isBadRequest()).andDo(document("addCardFailureLuhnAlgo"));

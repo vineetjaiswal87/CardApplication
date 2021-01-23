@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import lombok.Getter;
 
 /**
- * It is used to maintain a standard error response for the application.
+ * Standard error response structure for the application.
  *
  */
 @Getter

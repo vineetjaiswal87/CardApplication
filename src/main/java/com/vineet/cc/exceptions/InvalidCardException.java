@@ -4,7 +4,7 @@
 package com.vineet.cc.exceptions;
 
 /**
- * Exception to be thrown for invalid card.
+ * Exception to be thrown in case of Invalid Card.
  *
  */
 public class InvalidCardException extends Exception {

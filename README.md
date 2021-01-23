@@ -1,6 +1,6 @@
 # Card Application
 
-The Card application is a rest based service that serves the purpose of adding any new card and then fetching the same details back.
+The Card application is a rest based service that serves the purpose of adding any new card and then fetching the same card details back.
 
 ## Tech Stack
 

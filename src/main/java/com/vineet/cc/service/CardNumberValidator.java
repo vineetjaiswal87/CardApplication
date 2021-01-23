@@ -7,7 +7,7 @@ import com.vineet.cc.exceptions.InvalidCardException;
 import com.vineet.cc.exceptions.InvalidInputException;
 
 /**
- * Declared public API interface card validation.
+ * Declared public API interface for card validation.
  *
  */
 public interface CardNumberValidator {

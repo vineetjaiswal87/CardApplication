@@ -1,11 +1,13 @@
 package com.vineet.cc.dto;
 
+import org.apache.commons.lang3.StringUtils;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Value;
 
 /**
- * It is a pojo to capture user request to add card details
+ * Pojo to capture the user request to add card details
  *
  */
 @Getter
@@ -17,4 +19,13 @@ public class CardDetailRequest {
 	private String limitAmt;
 	private String userId;
 	
+	public String getMaskedCardNumber() {
+		return StringUtils.overlay(cardNumber, "******", 4, 15);
+	}
+
+	@Override
+	public String toString() {
+		return "CardDetailRequest [name=" + name + ", cardNumber=" + getMaskedCardNumber() + ", limitAmt=" + limitAmt + ", userId="
+				+ userId + "]";
+	}
 }

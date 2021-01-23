@@ -21,7 +21,7 @@ import com.vineet.cc.model.CardDetails;
 import com.vineet.cc.repository.CardDetailsRepository;
 
 /**
- * Class implementing the CardInterface to perform card addition and fetch.
+ * Class implementing the CardInterface to perform card addition and fetch from DB.
  *
  */
 
@@ -35,9 +35,9 @@ public class CreditCardService implements CardInterface {
 	@Autowired
 	CreditCardNumberValidatorImpl cardNumberValidator;
 	
-	/** It validates the request and then adds the data in database.
+	/** It validates the request and then adds the data in the database.
 	 * @param req contains the card details to be added
-	 * @return
+	 * @return ResponseEntity object.
 	 */
 	public ResponseEntity<ErrorResponse> addCardDetails(CardDetailRequest req) {
 		try {
@@ -57,19 +57,19 @@ public class CreditCardService implements CardInterface {
 			logger.info("Card Details added successfully");
 			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception ex) {
-			logger.error("Card Addition failed in DB", ex.getMessage());
+			logger.error("Card Addition failed in DB - ", ex.getMessage());
 			return new ResponseEntity<>(of(ErrorMessage.CARD_ADDITION_FAILURE, HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	/** It fetches all the records from database.
-	 * @return
+	/** It fetches all the records from the database.
+	 * @return List of Card details.
 	 */
 	public List<CardDetails> getAllCardDetails() {
 		try {
 			return crudRepo.findAll();
 		} catch(Exception ex) {
-			logger.error("Unable to fetch data", ex.getMessage());
+			logger.error("Unable to fetch data - ", ex.getMessage());
 			throw ex;
 		}
 		
