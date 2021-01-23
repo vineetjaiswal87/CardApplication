@@ -1,0 +1,109 @@
+# Card Application
+:snippets: ../../../target/snippets
+
+[Introduction]
+= Introduction
+The Card Application service allows to validate card details and add the same in database on successful validation. 
+It perform Luhn's algorithm check along with alphanumeric and maximum length validation. 
+It provides a get service to fetch all the added records from the database.
+
+'''
+[http-verbs]
+== HTTP Verbs Used
+
+The Card Application tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|====
+| HTTP verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to update an existing resource and create a new one
+
+|====
+
+'''
+[overview-http-status-codes]
+== HTTP status codes
+
+The Card Application tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+
+|====
+| Status code | Usage
+
+| `200 OK`
+| Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested 	resource. In a POST request, the response will contain an entity describing or containing the result of the action.
+
+| `201 CREATED`
+| Standard response for successful HTTP requests resulting in resource being created.
+
+| `404 Not Found`
+| The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible.
+
+| `400 Bad Request`
+| The request could not be understood by the server due to malformed syntax or invalid input. The client SHOULD NOT repeat the request without modifications.
+
+| `500 Internal Server Error`
+| Invalid Request format, or the server cannot be reached.
+|====
+
+'''
+
+[resources]
+= Resources
+[[resources-getCardDetails]]
+== Get Card Details
+The service to the fetch all the available records.
+
+[request]
+==== Curl Request
+include::{snippets}/getAllCard/curl-request.adoc[]
+
+==== HTTP Request
+include::{snippets}/getAllCard/http-request.adoc[]
+
+==== 200 HTTP Response
+include::{snippets}/getAllCard/http-response.adoc[]
+
+==== Response Fields
+include::{snippets}/getAllCard/response-body.adoc[]
+
+==== 404 HTTP Response (When no records available or database failure)
+include::{snippets}/getAllNoRecord/http-response.adoc[]
+
+==== Response Fields
+include::{snippets}/getAllNoRecord/response-body.adoc[]
+
+'''
+
+[[resources-saveCardDetails]]
+== Save Card Details
+The service to add new card details in the database.
+
+[request]
+==== Curl Request
+include::{snippets}/addCardSuccess/curl-request.adoc[]
+
+==== HTTP Request
+include::{snippets}/addCardSuccess/http-request.adoc[]
+
+==== 201 HTTP Response
+include::{snippets}/addCardSuccess/http-response.adoc[]
+
+==== 400 HTTP Response (Alphanumeric/input length > 19) 
+include::{snippets}/addCardFailureAlphanumeric/http-response.adoc[]
+
+==== Response Fields
+include::{snippets}/addCardFailureAlphanumeric/response-body.adoc[]
+
+==== 400 HTTP Response (When Luhn's algorithm check fails)
+include::{snippets}/addCardFailureLuhnAlgo/http-response.adoc[]
+
+==== Response Fields
+include::{snippets}/addCardFailureLuhnAlgo/response-body.adoc[]
+
+
+
+ 
