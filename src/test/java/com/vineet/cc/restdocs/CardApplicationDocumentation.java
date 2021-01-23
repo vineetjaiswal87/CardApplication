@@ -37,7 +37,7 @@ import com.vineet.cc.service.CreditCardService;
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs(outputDir = "target/snippets")
 @SpringBootTest
-public class CardControllerTest {
+public class CardApplicationDocumentation {
 	@Autowired
 	private MockMvc mockMvc;
 

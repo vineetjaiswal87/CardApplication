@@ -245,4 +245,17 @@
 ""2021-01-23 12:18:46,980 INFO  [main] : Card Details added successfully
 ""2021-01-23 12:18:46,983 INFO  [main] : Total sum Value::36
 ""2021-01-23 12:18:46,983 ERROR [main] : Invalid input::Invalid card
+""2021-01-23 12:35:15,781 INFO  [main] : Starting CardApplicationDocumentation using Java 15.0.1 on LAPTOP-2R652NNJ with PID 22452 (started by vinee in C:\Vineet\workspace\CardRepo)
+""2021-01-23 12:35:15,784 INFO  [main] : No active profile set, falling back to default profiles: default
+""2021-01-23 12:35:19,430 INFO  [main] : Started CardApplicationDocumentation in 3.989 seconds (JVM running for 5.078)
+""2021-01-23 12:35:19,724 INFO  [main] : Add Card Request::CardDetailRequest(name=Vineet, cardNumber=11112222QQQQ4444, limitAmt=100.00, userId=vx)
+""2021-01-23 12:35:19,724 ERROR [main] : Invalid input::Invalid input data
+""2021-01-23 12:35:19,841 INFO  [main] : Inside getAll service call
+""2021-01-23 12:35:19,879 INFO  [main] : Add Card Request::CardDetailRequest(name=Vineet, cardNumber=1111222255554444, limitAmt=100.00, userId=vx)
+""2021-01-23 12:35:19,882 INFO  [main] : Total sum Value::54
+""2021-01-23 12:35:19,882 ERROR [main] : Invalid input::Invalid card
+""2021-01-23 12:35:19,919 INFO  [main] : Add Card Request::CardDetailRequest(name=Vineet, cardNumber=1111222233334444, limitAmt=100.00, userId=vx)
+""2021-01-23 12:35:19,919 INFO  [main] : Total sum Value::60
+""2021-01-23 12:35:19,921 INFO  [main] : Card Details added successfully
+""2021-01-23 12:35:19,951 INFO  [main] : Inside getAll service call
 "
